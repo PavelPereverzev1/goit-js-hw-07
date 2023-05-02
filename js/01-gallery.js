@@ -6,7 +6,7 @@ console.log(galleryItems);
 // створюємо масив елементів списку
 const addedElements = galleryItems.map(({ preview, original, description }) => {
   return `<li class="gallery__item">
-            <a class="gallery__link" href="large-image.jpg">
+            <a class="gallery__link" href="${original}">
                 <img
                 class="gallery__image"
                 src="${preview}"
@@ -22,7 +22,6 @@ const galleryList = document.querySelector('.gallery');
 galleryList.insertAdjacentHTML('afterbegin', addedElements.join(''));
 
 // додаємо обробник події до галереї
-
 galleryList.addEventListener('click', selectImg);
 
 function selectImg(event) {
