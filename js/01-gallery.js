@@ -1,8 +1,6 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-console.log(galleryItems);
-
 // створюємо масив елементів списку
 const addedElements = galleryItems.map(({ preview, original, description }) => {
   return `<li class="gallery__item">

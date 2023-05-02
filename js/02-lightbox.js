@@ -1,8 +1,6 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-console.log(galleryItems);
-
 // створюємо масив елементів списку
 const addedElements = galleryItems.map(({ preview, original, description }) => {
   return `<li class="gallery__item">
@@ -16,16 +14,9 @@ const addedElements = galleryItems.map(({ preview, original, description }) => {
 const galleryList = document.querySelector('.gallery');
 galleryList.insertAdjacentHTML('afterbegin', addedElements.join(''));
 
-// додаємо обробник події до галереї
-galleryList.addEventListener('click', selectImg);
-
-function selectImg(event) {
-  // відміняємо перехід за посиланням
-  event.preventDefault();
-  //викликаємо створення модального вікна
-  new SimpleLightbox('.gallery a', {
-    captionDelay: 250,
-    captionsData: 'alt',
-    captionClass: 'caption',
-  });
-}
+//викликаємо створення модального вікна
+new SimpleLightbox('.gallery a', {
+  captionDelay: 250,
+  captionsData: 'alt',
+  captionClass: 'caption',
+});
